@@ -1,0 +1,17 @@
+<template name="postListItem">
+	<div class="post">
+		<div class="voting">
+			<a href="#" class="upvote {{upvotedClass}}"><i class="fa fa-arrow-up"></i></a>
+			<div class="vote-count">{{votes}}</div>
+			<a href="#" class="downvote {{downvotedClass}}"><i class="fa fa-arrow-down"></i></a>
+		</div>
+		<div class="post-content">
+			<h3><a href="{{link}}">{{title}}</a><span>({{domain}})</span></h3>
+			<p>
+				<a href="{{pathFor 'postPage'}}">{{commentsCount}} comments</a>,
+				submitted by <a href="{{pathFor 'usersPosts'}}">{{author}}</a>
+				{{#if canEdit}} - <a href="{{pathFor 'postEdit'}}">Edit</a>{{/if}} 
+			</p>
+		</div>
+	</div>
+</template>

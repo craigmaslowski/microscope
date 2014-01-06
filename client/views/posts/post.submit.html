@@ -1,0 +1,40 @@
+<template name="postSubmit">
+	<div class="post-form">
+		<ul class="nav nav-tabs">
+			<li class="active url"><a href="#">Link</a></li>
+			<li class="message"><a href="#">Message</a></li>
+		</ul>
+		<form class="main">
+			<div class="control-group">
+				<label class="control-label" for="title">Title</label> 
+				<div class="controls">
+					<input name="title" type="text" value="" placeholder="Name your post"/>
+				</div>
+			</div>
+			<div class="control-group url-control-group">
+				<label class="control-label" for="url">URL</label> 
+				<div class="controls">
+					<input name="url" type="text" value="" placeholder="Your URL"/> 
+				</div>
+			</div>
+			<div class="control-group message-control-group">
+				<label class="control-label" for="message">Message</label> 
+				<div class="controls">
+					<textarea name="message" type="text" value=""/>
+				</div>
+			</div>
+			<div class="control-group"> 
+				<div class="controls">
+					<button type="submit" class="btn btn-primary"><i class="fa fa-check"></i> Submit Post</button>
+					<a href="{{pathFor 'home'}}" class="btn"><i class="fa fa-times"></i> Cancel</a>
+				</div>
+			</div>
+		</form>
+		<div class="message-control-group">
+			<h5>Preview</h5>
+			<div class="markdown-preview">
+				{{#markdown}}{{messagePreview}}{{/markdown}}
+			</div>
+		</div>
+	</div>
+</template>

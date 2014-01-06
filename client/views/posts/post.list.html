@@ -1,0 +1,17 @@
+<template name="postsList">
+	{{#if rankedPosts}}
+		<div class="posts">
+			{{#each rankedPosts}}
+				{{> postListItem}}
+			{{/each}}
+
+			{{#if hasMorePosts}}
+				<a class="load-more" href="{{nextPath}}">Load more</a>
+			{{/if}}
+		</div>
+	{{else}}
+		<div class="well">
+			No posts to show.
+		</div>
+	{{/if}}
+</template>

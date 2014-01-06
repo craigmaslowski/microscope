@@ -1,0 +1,27 @@
+<template name="postDetail">
+	<div class="post">
+		<div class="voting">
+			<a href="#" class="upvote {{upvotedClass}}"><i class="fa fa-arrow-up"></i></a>
+			<div class="vote-count">{{votes}}</div>
+			<a href="#" class="downvote {{downvotedClass}}"><i class="fa fa-arrow-down"></i></a>
+		</div>
+		<div class="post-content">
+			{{#if url}}
+				<h3><a href="{{url}}">{{title}}</a> <span>{{domain}}</span></h3>
+			{{else}}
+				<h3>{{title}} <span>(self)</h3>
+			{{/if}}
+			<p>
+				{{pluralize votes "Vote"}},
+				<a href="{{pathFor 'postPage'}}">{{commentsCount}} comments</a>,
+				submitted by <a href="{{pathFor 'usersPosts'}}">{{author}}</a>
+				{{#if canEdit}} - <a href="{{pathFor 'postEdit'}}">Edit</a>{{/if}} 
+			</p>
+			{{#if message}}
+				<div class="message">
+					{{#markdown}}{{message}}{{/markdown}}
+				</div>
+			{{/if}}
+		</div>
+	</div>
+</template>

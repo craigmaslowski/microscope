@@ -1,0 +1,16 @@
+<template name="comment">
+	<li class="comment">
+		<div class="voting">
+			<a href="#" class="upvote {{upvotedClass}}"><i class="fa fa-arrow-up"></i></a>
+			<div class="vote-count">{{votes}}</div>
+			<a href="#" class="downvote {{downvotedClass}}"><i class="fa fa-arrow-down"></i></a>
+		</div>
+		<div class="comment-content">
+			<h4>
+				<span class="author">{{author}}</span>
+				<span class="date">on {{submittedText}},</span>
+			</h4>
+			<p>{{body}}</p> 
+		</div>
+	</li>
+</template>
